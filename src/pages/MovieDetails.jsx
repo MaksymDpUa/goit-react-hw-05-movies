@@ -1,4 +1,4 @@
-import { FilmCard } from 'components/filmCard/FilmCard';
+// import { FilmCard } from 'components/filmCard/FilmCard';
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 import { getFilmById } from 'servises/api';
@@ -22,7 +22,7 @@ function MovieDetails() {
       })
       .catch(err => alert(err))
       .finally();
-  }, []);
+  }, [movieId]);
 
   return (
     <>
@@ -39,9 +39,9 @@ function MovieDetails() {
           <ul>{film.genres.map(genre => <li key={genre.id}>{ genre.name}</li>)}</ul>
         </div>
       )}
-
-      <FilmCard film={film} />
-      <Link to="cast">Cast</Link>
+{/* 
+      <FilmCard film={film} /> */}
+      <Link to="cast" state={movieId}>Cast</Link>
       <Link to="reviews">Reviews</Link>
       <Outlet />
     </>
