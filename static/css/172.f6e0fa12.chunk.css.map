@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/172.f6e0fa12.chunk.css","mappings":"AAAA,yCAEE,wBAAoC,CADpC,gBAEF","sources":["components/additionalInfoLinkList/AdditionalInfoLinkList.module.css"],"sourcesContent":[".container {\n  padding: 8px 12px;\n  border: 2px solid rgb(223, 223, 223);\n}\n"],"names":[],"sourceRoot":""}
