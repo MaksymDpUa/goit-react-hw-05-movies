@@ -1,9 +1,9 @@
 .container {
   display: flex;
   gap: 16px;
+  margin-bottom: 8px;
 }
 
 .poster {
   display: block;
 }
-

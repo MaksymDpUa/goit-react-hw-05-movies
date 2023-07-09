@@ -8,9 +8,9 @@ export const FilmCard = ({ film }) => {
         src={`https://image.tmdb.org/t/p/w200${film.poster_path}`}
         alt={film.title}
       />
-      <div> 
+      <div>
         <h2>{film.title}</h2>
-        <p>User score: {film.popularity}%</p>
+        <p>User score: {Math.round(film.popularity)}%</p>
         <p>Overview: {film.overview} </p>
         <h3>Genres</h3>
         <ul>
