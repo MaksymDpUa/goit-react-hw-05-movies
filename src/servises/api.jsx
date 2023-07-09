@@ -18,5 +18,18 @@ function getFilmByTitle(title) {
 function getFilmCredits(filmId) {
   return fetch(`${BASE_URL}movie/${filmId}/credits?language=en-US&${API_KEY}`);
 }
+ 
+function getFilmReview(filmId) {
+  return fetch(
+    `${BASE_URL}movie/${filmId}/reviews?language=en-US&${API_KEY}&page=1`
+  );
+}
 
-export { getTrendingFilms, getFilmById, getFilmByTitle, getFilmCredits }
+
+export {
+  getTrendingFilms,
+  getFilmById,
+  getFilmByTitle,
+  getFilmCredits,
+  getFilmReview,
+};

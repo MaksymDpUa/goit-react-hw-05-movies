@@ -1,0 +1,13 @@
+.photo {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.listItem {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+
