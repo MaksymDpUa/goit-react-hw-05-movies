@@ -4,6 +4,7 @@ import { getFilmByTitle } from 'servises/api';
 
 function Movies() {
   const [findedFilms, setFindedFilms] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isSearchQvery, setISearchQvery] = useState(false);
   const location = useLocation();
@@ -15,6 +16,7 @@ function Movies() {
       setISearchQvery(false);
       return;
     }
+    setIsLoading(true);
     setISearchQvery(true);
     getFilmByTitle(searchQuery)
       .then(resp => {
@@ -26,7 +28,7 @@ function Movies() {
       })
       .then(data => setFindedFilms(data.results))
       .catch(err => alert(err))
-      .finally();
+      .finally(() => setIsLoading(false));
   }, [searchParams, setSearchParams]);
 
   const handleOnSubmit = evt => {
@@ -43,6 +45,7 @@ function Movies() {
         </label>
         <button type="submit">Search</button>
       </form>
+      {isLoading && <div>Loading...</div>}
       {isSearchQvery && (
         <ul>
           {findedFilms?.map(film => (

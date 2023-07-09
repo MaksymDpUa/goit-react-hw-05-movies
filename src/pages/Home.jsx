@@ -4,9 +4,11 @@ import { getTrendingFilms } from 'servises/api';
 
 function Home() {
   const [trendingFilms, setTrendingFilms] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
+    setIsLoading(true);
     getTrendingFilms()
       .then(resp => {
         if (resp.ok) {
@@ -16,12 +18,14 @@ function Home() {
         }
       })
       .then(films => setTrendingFilms(films.results))
-      .catch(err => alert(err));
+      .catch(err => alert(err))
+      .finally(() => setIsLoading(false));
   }, []);
 
   return (
     <>
       <h1>Trending today</h1>
+      {isLoading && <div>Loading...</div>}
       <ul>
         {trendingFilms.map(film => (
           <li key={film.id}>
