@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/731.3533c2b5.chunk.css","mappings":"AAAA,2BACE,YAAa,CACb,QAAS,CACT,iBACF,CAEA,wBACE,aACF","sources":["components/filmCard/FilmCard.module.css"],"sourcesContent":[".container {\n  display: flex;\n  gap: 16px;\n  margin-bottom: 8px;\n}\n\n.poster {\n  display: block;\n}\n"],"names":[],"sourceRoot":""}
