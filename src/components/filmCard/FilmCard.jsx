@@ -1,6 +1,6 @@
 import css from './FilmCard.module.css';
 
-const FilmCard = ({ film }) => {
+export const FilmCard = ({ film }) => {
   return (
     <section className={css.container}>
       <img
@@ -22,5 +22,3 @@ const FilmCard = ({ film }) => {
     </section>
   );
 };
-
-export default FilmCard;
